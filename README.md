@@ -31,4 +31,4 @@ de productos.
 De esa forma se consiguió la cuadricula. El json fue utilizado para simular la conexión con algolia
 
 # Enlace del repositorio desplegado
-https://chedrick343.github.io/Proyecto1Comercio/
+https://racc1210.github.io/comercioDespliegue/
