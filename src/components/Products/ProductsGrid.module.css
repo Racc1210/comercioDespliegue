@@ -1,0 +1,425 @@
+.products {
+    width: 100%;
+    padding: 20px 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =====================
+   ENCABEZADO
+===================== */
+
+.productsHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.productsTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f5f5f5;
+    font-family: var(--jewel-font-heading, Georgia, 'Times New Roman', serif);
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.productsCount {
+    font-size: 13px;
+    color: #a8a8a8;
+}
+
+
+/* =====================
+   TOGGLE DE VISTA (CUADRÍCULA / LISTA)
+===================== */
+
+.viewToggle {
+    display: flex;
+    gap: 2px;
+
+    padding: 3px;
+
+    background-color: #3f3f3f;
+    border-radius: 8px;
+}
+
+.viewButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 26px;
+
+    color: #b9b9b9;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.viewButton:hover {
+    color: #f1f1f1;
+}
+
+.viewButton:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.viewButtonActive {
+    color: #2b2b2b;
+    background-color: #ffffff;
+}
+
+
+/* Visually hidden, but still announced by screen readers */
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =====================
+   ÁREA DE LA CUADRÍCULA
+===================== */
+
+.scrollArea {
+    padding: 4px;
+
+    background-color: #3f3f3f;
+    border-radius: 12px;
+}
+
+
+/* =====================
+   CUADRÍCULA
+===================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+
+    padding: 12px;
+}
+
+@media (min-width: 861px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* =====================
+   LISTA
+===================== */
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 12px;
+}
+
+
+/* =====================
+   TARJETA
+===================== */
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #2b2b2b;
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+}
+
+.card:hover {
+    border-color: #ffffff;
+}
+
+.card:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.listCard {
+    flex-direction: row;
+}
+
+.listCard .cardBody {
+    justify-content: center;
+}
+
+.imageWrapper {
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    background-color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listImageWrapper {
+    position: relative;
+    flex-shrink: 0;
+
+    width: 140px;
+    aspect-ratio: 1 / 1;
+
+    background-color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.outOfStock {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    padding: 4px 8px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    color: #ffffff;
+    background-color: #b3261e;
+    border-radius: 4px;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 12px;
+}
+
+.category {
+    font-size: 11px;
+    color: #b9b9b9;
+
+    align-self: flex-start;
+
+    padding: 3px 8px;
+
+    background-color: #4a4a4a;
+    border-radius: 999px;
+}
+
+.cardTitle {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    font-family: var(--jewel-font-heading, Georgia, 'Times New Roman', serif);
+
+    color: #f1f1f1;
+
+    /* Recorta a 2 líneas para que las tarjetas queden parejas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.price {
+    margin: 4px 0 0;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* =====================
+   ESTADO VACÍO
+===================== */
+
+.emptyState {
+    margin: 0;
+    padding: 32px 16px;
+
+    text-align: center;
+    font-size: 14px;
+    color: #c5c5c5;
+
+    background-color: #3f3f3f;
+    border-radius: 12px;
+}
+
+
+/* =====================
+   PAGINACIÓN
+===================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    /* Evita que la fila entera se desborde en pantallas angostas */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.pageButton {
+    flex-shrink: 0;
+
+    padding: 8px 14px;
+
+    font-size: 13px;
+    color: #f1f1f1;
+
+    background-color: #4a4a4a;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.pageButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pageButton:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+.pageNumbers {
+    display: flex;
+    gap: 6px;
+
+    /* En vez de romper línea o desbordar, permite scroll horizontal */
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    max-width: 100%;
+}
+
+.pageNumbers::-webkit-scrollbar {
+    display: none;
+}
+
+.pageNumber {
+    flex-shrink: 0;
+
+    min-width: 34px;
+    padding: 8px 0;
+
+    font-size: 13px;
+    color: #f1f1f1;
+
+    background-color: #4a4a4a;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.pageNumberActive {
+    background-color: #ffffff;
+    color: #2b2b2b;
+    font-weight: 700;
+}
+
+.pageEllipsis {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+    padding: 8px 0;
+
+    font-size: 13px;
+    color: #a8a8a8;
+}
+
+.pageButton:focus-visible,
+.pageNumber:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 720px) {
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .listImageWrapper {
+        width: 96px;
+    }
+
+    /* En móvil mostramos menos números para dejar mas espacio */
+    .pagination {
+        gap: 6px;
+    }
+
+    .pageButton {
+        padding: 8px 10px;
+    }
+
+    .pageNumber {
+        min-width: 30px;
+        padding: 7px 0;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,112 @@
+.searchBar {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #2f2f2f;
+    box-sizing: border-box;
+}
+
+@media (min-width: 861px) {
+    .searchBar {
+        flex: 1;
+        padding: 0;
+        background-color: transparent;
+    }
+}
+
+
+.searchGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 0;
+    height: 46px;
+
+    padding: 0 46px 0 18px;
+
+    border: none;
+    border-radius: 16px;
+
+    background-color: #f3f3f3;
+
+    color: #333;
+    font-size: 14px;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition: box-shadow 0.2s ease;
+}
+
+.searchInput::placeholder {
+    color: #8a8a8a;
+}
+
+.searchInput:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+.searchInput::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.clearButton {
+    position: absolute;
+    right: 12px;
+    display: grid;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #2f2f2f;
+    cursor: pointer;
+}
+
+.clearButton:hover {
+    background-color: rgba(47, 47, 47, 0.1);
+}
+
+.clearButton:focus-visible {
+    outline: 2px solid #2f2f2f;
+    outline-offset: 1px;
+}
+
+
+@media (min-width: 768px) {
+    .searchBar {
+        padding: 16px 40px;
+    }
+
+    .searchInput {
+        height: 50px;
+        font-size: 15px;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .searchBar {
+        padding: 0;
+    }
+
+    .searchGroup {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .searchInput {
+        height: 54px;
+        font-size: 16px;
+    }
+}
+
+
+

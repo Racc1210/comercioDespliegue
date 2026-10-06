@@ -1,0 +1,328 @@
+.filters {
+    width: 100%;
+    height: 100%;
+    padding: 20px 16px;
+
+    box-sizing: border-box;
+
+    /* Fondo gris oscuro */
+    background-color: #3f3f3f;
+
+    border-radius: 0 0 20px 20px;
+}
+
+
+/* =========================
+   BOTÓN FILTERS
+========================= */
+.filtersButton:active {
+    transform: scale(0.98);
+}
+
+.filtersButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 12px;
+
+    padding: 16px 24px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #292929;
+    border: 1px solid #474747;
+    color: #f7f2e9;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+
+.filtersButton:hover {
+    background-color: #3f3f3f;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.filtersPanel {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+    margin-top: 14px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background-color: #292929;
+
+    border: 1px solid #474747;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.filtersPanelOpen {
+    display: block;
+}
+
+
+/* =========================
+   SECCIÓN INDIVIDUAL
+========================= */
+
+.filterSection {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding-bottom: 24px;
+
+    margin-bottom: 24px;
+
+    border-bottom: 1px solid #494949;
+}
+
+
+.filterSection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.filterTitle {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #f8f3ea;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categoriesList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    /* Mostrar aproximadamente 5 categorías */
+    max-height: 190px;
+
+    /* Scroll vertical */
+    overflow-y: auto;
+
+    padding-right: 8px;
+}
+
+.categoriesList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.categoriesList::-webkit-scrollbar-track {
+    background: #242425;
+    border-radius: 10px;
+}
+
+.categoriesList::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 10px;
+}
+
+.categoriesList::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+}
+
+.categoryOption {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.categoryOption input {
+
+    width: 17px;
+    height: 17px;
+
+    cursor: pointer;
+    accent-color: #c9a246;
+}
+
+
+/* =========================
+   PRICE RANGE
+========================= */
+
+.priceValues {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.priceBox {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px;
+
+    background-color: #333333;
+
+    border-radius: 10px;
+}
+
+
+.priceBox span {
+
+    font-size: 11px;
+
+    color: #aaa8a4;
+}
+
+
+.priceBox strong {
+
+    font-size: 14px;
+
+    color: #f7f3eb;
+}
+
+
+/* =========================
+   SLIDERS
+========================= */
+
+.sliderContainer {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.sliderLabel {
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #b9b9b9;
+}
+
+
+.priceSlider {
+
+    width: 100%;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   LÍMITES
+========================= */
+
+.priceLimits {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    color: #a8a8a8;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    .filters {
+        padding: 20px 40px;
+    }
+
+    .filterTitle {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================
+   ESCRITORIO: barra lateral fija, siempre visible
+========================= */
+
+@media (min-width: 861px) {
+
+    .filters {
+        width: 260px;
+        flex: 0 0 260px;
+
+        height: auto;
+        padding: 0;
+        /* Alinea el tope de la tarjeta con el título "Productos"
+           (que tiene ese mismo padding superior) */
+        margin-top: 20px;
+
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .filtersButton {
+        display: none;
+    }
+
+    .filtersPanel {
+        display: block;
+
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+}
